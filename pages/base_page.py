@@ -1,12 +1,10 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium import webdriver
-from config.testdata import TestData
 
-from utils.configFileParser import ConfigFileParser
+"""This class is the parent of all pages
+it contains all generic methods and utilities for all the pages"""
 
 class BasePage():
-    driver = webdriver.Chrome(executable_path=TestData.CHROME_EX_PATH)
 
     @property
     def __init__(self, driver):
@@ -22,7 +20,7 @@ class BasePage():
         element = WebDriverWait(self.driver, 10).until(EC.visibility_of_all_elements_located(by_locator))
         return element.text
 
-    def is_enabled(self, by_locator):
+    def is_visible(self, by_locator):
         element = WebDriverWait(self.driver, 10).until(EC.visibility_of_all_elements_located(by_locator))
         return bool(element)
 

@@ -1,10 +1,6 @@
-import pytest
-from pytest_bdd import scenario, scenarios, given, when, then, parser
-from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
-from config.testdata import TestData
-from pages.nexport_page import NexportPage
-from pages.base_page import BasePage
+from pytest_bdd import scenarios, given, when, then
+from pages.login_page import NexportPage
+
 nexportPage = NexportPage()
 #basePage = BasePage()
 
